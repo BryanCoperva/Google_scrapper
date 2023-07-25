@@ -33,7 +33,9 @@ div_content = soup.find('div', {'id':'zkzk'}).get_text()
 clean = re.sub(r'\.$', '', div_content).strip()
 
 #Utilizar split para extraer las direcciones IP y los puertos
-proxies_list = [proxy.strip() for proxy in div_content.split('<br>') if proxy.strip()]
+#proxies_list = [proxy.strip() for proxy in div_content.split('<br>') if proxy.strip()]
+
+proxies_list = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', div_content)
 # Convertir la lista en un diccionario
 proxies_list = [{'http':f'http://{proxy}'} for proxy in proxies_list]
 
