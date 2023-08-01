@@ -1,2 +1,6 @@
 *.csv
+<<<<<<< HEAD
 google-scrapper/
+=======
+*.txt
+>>>>>>> 5f1f57c054dc95de499563e40a4a3f78f5a46d6b
